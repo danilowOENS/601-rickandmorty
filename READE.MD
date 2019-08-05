@@ -24,7 +24,6 @@
 
 #### API
 
-- https://rickandmortyapi.com/api/character/
+- https://rickandmortyapi.com
 
-
-[clique aqui](https://danilowoens.github.io/601-rickandmorty/.)
+para jogar o jogo [clique aqui](https://danilowoens.github.io/601-rickandmorty/.)
