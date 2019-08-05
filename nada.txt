@@ -1,4 +1,0 @@
-O nome dos integrantes do grupo.
-Como jogar o jogo.
-Referência à API consumida (link e descrição).
-O link do jogo publicado através do github pages.
