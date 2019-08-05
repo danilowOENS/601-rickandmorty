@@ -11,12 +11,12 @@ gerarImagem = () =>{
     fetch(`https://rickandmortyapi.com/api/character/${aleatorio}`)   
     .then(function(result){
         return result.json()
-})
+    })
     .then(function(data){
         console.log(data.name);
         imagem.src = data.image;
         let nomeDoPersonagem = data.name.toUpperCase().toString();
-
+        
         tentar.onclick =function(){
             let input = caixaDetexto.value.toUpperCase().toString();
             if(input == nomeDoPersonagem){
@@ -24,17 +24,28 @@ gerarImagem = () =>{
                 contador ++;
                 p.innerHTML = `pontuacão: ${contador}`;
                 caixaDetexto.value = "";
+                gerarImagem();
             }
             else{
                 h4.innerHTML = `errrouuuuuu`
                 contador --;
                 p.innerHTML = `pontuação: ${contador}`;
                 caixaDetexto.value = "";
+
+                if(contador < 0){
+                    p.innerHTML = `Você perdeu, pontuação negativa: ${contador}`;
+
+                    setTimeout(() => {
+                        location.reload();
+                    }, 2000);
+                } else {
+                    gerarImagem();
+                }
             }
-            gerarImagem();
         }    
     })
     
 } 
+
 
 iniciar.onclick = gerarImagem;
